@@ -1085,7 +1085,7 @@ function sendToSheets(data){
     },800);
     return;
   }
-  fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+  fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
     .then(()=>{box.className='submit-status success';box.innerHTML='<div class="status-icon">✅</div><div class="status-text"><strong>Result saved</strong><span>Your placement has been recorded.</span></div>';})
     .catch(()=>{box.className='submit-status failed';box.innerHTML='<div class="status-icon">⚠️</div><div class="status-text"><strong>Could not auto-save</strong><span>Please screenshot your result for your teacher.</span></div>';});
 }
